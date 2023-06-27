@@ -20,7 +20,7 @@ for filename in fileList:
 gameList = sorted(gameList, key=lambda x: int(x["solvedCount"]), reverse=True)[:300]
 
 # 按格式输出
-with open("copytoREADME", 'w', encoding = 'utf-8') as writefile:
+with open("README.md", 'w', encoding = 'utf-8') as writefile:
     for i, game in enumerate(gameList):
         writefile.write("| " + str(i + 1).ljust(4) + "| "
               + str(game["solvedCount"]).ljust(7) + "| ["

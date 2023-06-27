@@ -8,6 +8,7 @@
 ## Introduction
 My solutions for puzzles on the platform https://www.codingame.com/.
 
+> **Info:** It is not my intention to write the solutions as short as possible! I just want to write my code understandable and clean even when it makes the actual code longer.
 
 ## Completed Puzzles
 | No. |Solved  | Puzzle Name                                                                                                                        | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                                                                                  |
