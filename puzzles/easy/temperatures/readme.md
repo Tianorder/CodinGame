@@ -2,7 +2,7 @@
 
 In this exercise, you have to analyze records of temperature to find the closest to zero.
 
-![Sample temperatures](img/temperatures.png "Here, -1 is the closest to 0.")
+![Sample temperatures](temperatures.png "Here, -1 is the closest to 0.")
 
 Write a program that prints the temperature closest to 0 among input data.
 
