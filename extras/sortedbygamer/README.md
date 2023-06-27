@@ -1,18 +1,3 @@
-[![CodinGame](/CodinGame.png)](https://www.codingame.com/ "CodinGame")
-
-<br>
-
-# CodinGame Solutions
-
-
-## Introduction
-My solutions for puzzles on the platform https://www.codingame.com/.
-
-> **Info:** It is not my intention to write the solutions as short as possible! I just want to write my code understandable and clean even when it makes the actual code longer.
-
-## Completed Puzzles
-| No. |Solved  | Puzzle Name                                                                                                                        | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                                                                                  |
-|-----|--------|------------------------------------------------------------------------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1   | 2106718| [Onboarding](https://www.codingame.com/training/easy/onboarding)                                                                   | tutorial   |                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | 2   | 603252 | [The Descent](https://www.codingame.com/training/easy/the-descent)                                                                 | easy       |                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | 3   | 369494 | [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)                                       | easy       |                                                                                                                                                                                                                                                                                                                                                                                                                 |
