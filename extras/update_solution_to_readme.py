@@ -18,7 +18,11 @@ for difficultyDir in os.listdir(puzzlePath):
         filePath = os.path.join(puzzleNamePath, puzzleName)
         haveNewFile = False
         replaceStr = ""
-        for filename in os.listdir(filePath):
+        fileList = os.listdir(filePath)
+        # 用sorted排序比for循环更快。但如果在这里直接判断创建日期，没有最近的文件则直接不进行后面的循环会不会更快？
+        fileList = sorted(fileList, key=lambda x: os.path.getctime(os.path.join(filePath, x)))
+
+        for filename in fileList:
             if filename.endswith('py'):
                 replaceStr += (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                + difficultyDir + "/" + puzzleName + "/" + filename + ")")
@@ -27,6 +31,9 @@ for difficultyDir in os.listdir(puzzlePath):
                                + difficultyDir + "/" + puzzleName + "/" + filename + ")")
             elif filename.endswith('js'):
                 replaceStr += (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                               + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+            elif filename.endswith('bat'):
+                replaceStr += (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                + difficultyDir + "/" + puzzleName + "/" + filename + ")")
 
             # 检查文件的创建日期是否在七天内
