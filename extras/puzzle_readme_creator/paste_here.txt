@@ -1,47 +1,53 @@
-MIME Type
+Defibrillators
 Best score
  100
 
-1
  	The Goal
-MIME types are used in numerous internet protocols to associate a media type (html, image, video ...) with the content sent. The MIME type is generally inferred from the extension of the file to be sent.
+The city of Montpellier has equipped its streets with defibrillators to help save victims of cardiac arrests. The data corresponding to the position of all defibrillators is available online.
 
-You have to write a program that makes it possible to detect the MIME type of a file based on its name.
+Based on the data we provide in the tests, write a program that will allow users to find the defibrillator nearest to their location using their mobile phone.
  	Rules
-You are provided with a table which associates MIME types to file extensions. You are also given a list of names of files to be transferred and for each one of these files, you must find the MIME type to be used.
+The input data you require for your program is provided in text format.
+This data is comprised of lines, each of which represents a defibrillator. Each defibrillator is represented by the following fields:
+A number identifying the defibrillator
+Name
+Address
+Contact Phone number
+Longitude (degrees)
+Latitude (degrees)
+These fields are separated by a semicolon (;).
 
-The extension of a file is defined as the substring which follows the last occurrence, if any, of the dot character within the file name.
-If the extension for a given file can be found in the association table (case insensitive, e.g. TXT is treated the same way as txt), then print the corresponding MIME type. If it is not possible to find the MIME type corresponding to a file, or if the file doesn’t have an extension, print UNKNOWN.
+Beware: the decimal numbers use the comma (,) as decimal separator. Remember to turn the comma (,) into dot (.) if necessary in order to use the data in your program.
+ 
+DISTANCE
+The distance d between two points A and B will be calculated using the following formula:
+
+
+​
+Note: In this formula, the latitudes and longitudes are expressed in radians. 6371 corresponds to the radius of the earth in km.
+
+The program will display the name of the defibrillator located the closest to the user’s position. This position is given as input to the program.
  	Game Input
 Input
-Line 1: Number N of elements which make up the association table.
+Line 1: User's longitude (in degrees)
 
-Line 2: Number Q of file names to be analyzed.
+Line 2: User's latitude (in degrees)
 
-N following lines: One file extension per line and the corresponding MIME type (separated by a blank space).
+Line 3: The number N of defibrillators located in the streets of Montpellier
 
-Q following lines: One file name per line.
+N next lines: a description of each defibrillator
 
 Output
-For each of the Q filenames, display on a line the corresponding MIME type. If there is no corresponding type, then display UNKNOWN.
+The name of the defibrillator located the closest to the user’s position.
 Constraints
 0 < N < 10000
-0 < Q < 10000
-File extensions are composed of a maximum of 10 alphanumerical ASCII characters.
-MIME types are composed of a maximum 50 alphanumerical and punctuation ASCII characters.
-File names are composed of a maximum of 256 alphanumerical ASCII characters and dots (full stops).
-There are no spaces in the file names, extensions or MIME types.
 Example
 Input
+3,879483
+43,608177
 3
-3
-html text/html
-png image/png
-gif image/gif
-animated.gif
-portrait.png
-index.html
+1;Maison de la Prevention Sante;6 rue Maguelone 340000 Montpellier;;3,87952263361082;43,6071285339217
+2;Hotel de Ville;1 place Georges Freche 34267 Montpellier;;3,89652239197876;43,5987299452849
+3;Zoo de Lunaret;50 avenue Agropolis 34090 Mtp;;3,87388031141133;43,6395872778854
 Output
-image/gif
-image/png
-text/html
+Maison de la Prevention Sante
