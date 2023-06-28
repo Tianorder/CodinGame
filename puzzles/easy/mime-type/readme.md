@@ -29,19 +29,22 @@ For each of the Q filenames, display on a line the corresponding MIME type. If t
 * MIME types are composed of a maximum 50 alphanumerical and punctuation ASCII characters.
 * File names are composed of a maximum of 256 alphanumerical ASCII characters and dots (full stops).
 * There are no spaces in the file names, extensions or MIME types.
-* Example
 
-### Input
-3
-3
-html text/html
-png image/png
-gif image/gif
-animated.gif
-portrait.png
-index.html
+### Example
 
-### Output
-image/gif
-image/png
-text/html
+    Input
+
+        3
+        3
+        html text/html
+        png image/png
+        gif image/gif
+        animated.gif
+        portrait.png
+        index.html
+
+    Output
+
+        image/gif
+        image/png
+        text/html        

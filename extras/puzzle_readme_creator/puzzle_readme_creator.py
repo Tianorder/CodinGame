@@ -45,14 +45,6 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
             line = line.replace(": ", "**: ")
             writeList.append("* **" + line)
             line = readfile.readline()
-        elif line.rstrip() == "Constraints":
-            writeList.append("\n")
-            writeList.append("### " + line)
-            listMode = True
-        elif line.endswith(":"):
-            listMode = True
-        elif listMode:
-            writeList.append("* " + line)
         elif line.rstrip() == "Example":
             writeList.append("\n")
             writeList.append("### " + line)
@@ -64,6 +56,15 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
                     writeList.append("\n")
                 else:
                     writeList.append("        " + line)
+            listMode = False
+        elif line.rstrip() == "Constraints":
+            writeList.append("\n")
+            writeList.append("### " + line)
+            listMode = True
+        elif line.endswith(":"):
+            listMode = True
+        elif listMode:
+            writeList.append("* " + line)
         else:
             writeList.append(line)
 
