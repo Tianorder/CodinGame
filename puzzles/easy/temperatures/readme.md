@@ -33,11 +33,3 @@ Write a program that prints the temperature closest to 0 among input data.
     Output
 
         1
-
-## Conditions
-
-* Available RAM: 512MB
-* Timeout: 1 seconds
-* The program has to read inputs from standard input
-* The program has to write the solution to standard output
-* The program must run in the test environment
