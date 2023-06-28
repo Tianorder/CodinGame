@@ -13,7 +13,7 @@ In a hyperdual, a horse's strength is a bidimensional (Velocity,Elegance) vector
 ## Input
 
 * **Line 1**: Number N of horses
-* **N following lines: the speed Vi and elegance Ei of each horse, space-separated
+* **N following lines**: the speed Vi and elegance Ei of each horse, space-separated
 
 
 ## Output

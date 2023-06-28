@@ -1,0 +1,68 @@
+# 23.6.28
+# 本脚本用于生成每个puzzle下的readme.md文件
+# 需要手动从页面复制到paste_here.txt，后续或许可以考虑直接从网页抓
+
+
+import os
+import sys
+import shutil
+import json
+
+writeList = []
+with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
+    puzzleName = readfile.readline().lower().replace(" ", "-")
+    writeList.append("# " + puzzleName)
+    readfile.readline()
+    readfile.readline()
+    readfile.readline()
+    readfile.readline()
+    line = ' '
+    listMode = False
+    while line:
+        line = readfile.readline()
+        if " 	" in line:
+            writeList.append("\n")
+            if "The Goal" in line:
+                writeList.append(line.replace(" 	", "## ⚽"))
+            elif "Rules" in line:
+                writeList.append(line.replace(" 	", "## ✔"))
+            elif "Example" in line:
+                writeList.append(line.replace(" 	", "## 🗒"))
+            elif "Game Input" in line:
+                writeList.append(line.replace(" 	", "## 📑"))
+            else:
+                writeList.append(line.replace(" 	", "## "))
+            listMode = False
+        elif line.rstrip() in ("Input", "Output", "Constraints"):
+            writeList.append("\n")
+            writeList.append("### " + line)
+            listMode = False
+        elif line.startswith("- "):
+            writeList.append("  " + line)
+            listMode = False
+        elif ": " in line:
+            line = line.replace(": ", "**: ")
+            writeList.append("* **" + line)
+            line = readfile.readline()
+        elif line.endswith(":"):
+            listMode = True
+        elif listMode:
+            writeList.append("* " + line)
+        elif line.rstrip() == "Example":
+            writeList.append("\n")
+            writeList.append("### " + line)
+            while line:
+                line = readfile.readline()
+                if line.rstrip() in ("Input", "Output"):
+                    writeList.append("\n")
+                    writeList.append("    " + line)
+                    writeList.append("\n")
+                else:
+                    writeList.append("        " + line)
+        else:
+            writeList.append(line)
+
+with open("readme.md", 'w', encoding = 'utf-8') as writefile:
+    for line in writeList:
+        writefile.write(line)
+
