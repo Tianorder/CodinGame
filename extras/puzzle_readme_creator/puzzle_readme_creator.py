@@ -10,8 +10,9 @@ import json
 
 writeList = []
 with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
-    puzzleName = readfile.readline().lower().replace(" ", "-")
-    writeList.append("# " + puzzleName)
+    line = readfile.readline()
+    writeList.append("# " + line)
+    puzzleName = line.lower().replace(" ", "-")
     readfile.readline()
     readfile.readline()
     readfile.readline()
@@ -33,7 +34,7 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
             else:
                 writeList.append(line.replace(" 	", "## "))
             listMode = False
-        elif line.rstrip() in ("Input", "Output", "Constraints"):
+        elif line.rstrip() in ("Input", "Output"):
             writeList.append("\n")
             writeList.append("### " + line)
             listMode = False
@@ -44,6 +45,10 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
             line = line.replace(": ", "**: ")
             writeList.append("* **" + line)
             line = readfile.readline()
+        elif line.rstrip() == "Constraints":
+            writeList.append("\n")
+            writeList.append("### " + line)
+            listMode = True
         elif line.endswith(":"):
             listMode = True
         elif listMode:

@@ -1,4 +1,4 @@
-# mime-type
+# MIME Type
 
 ## ⚽The Goal
 MIME types are used in numerous internet protocols to associate a media type (html, image, video ...) with the content sent. The MIME type is generally inferred from the extension of the file to be sent.
@@ -23,28 +23,25 @@ If the extension for a given file can be found in the association table (case in
 For each of the Q filenames, display on a line the corresponding MIME type. If there is no corresponding type, then display UNKNOWN.
 
 ### Constraints
-0 < N < 10000
-0 < Q < 10000
-File extensions are composed of a maximum of 10 alphanumerical ASCII characters.
-MIME types are composed of a maximum 50 alphanumerical and punctuation ASCII characters.
-File names are composed of a maximum of 256 alphanumerical ASCII characters and dots (full stops).
-There are no spaces in the file names, extensions or MIME types.
+* 0 < N < 10000
+* 0 < Q < 10000
+* File extensions are composed of a maximum of 10 alphanumerical ASCII characters.
+* MIME types are composed of a maximum 50 alphanumerical and punctuation ASCII characters.
+* File names are composed of a maximum of 256 alphanumerical ASCII characters and dots (full stops).
+* There are no spaces in the file names, extensions or MIME types.
+* Example
 
-### Example
+### Input
+3
+3
+html text/html
+png image/png
+gif image/gif
+animated.gif
+portrait.png
+index.html
 
-    Input
-
-        3
-        3
-        html text/html
-        png image/png
-        gif image/gif
-        animated.gif
-        portrait.png
-        index.html
-
-    Output
-
-        image/gif
-        image/png
-        text/html        
+### Output
+image/gif
+image/png
+text/html
