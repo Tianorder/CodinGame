@@ -6,7 +6,7 @@ for (( i=0; i < $N; i++)); do
     read -r Pi
     Pi_array[i]="$Pi"
 done
-Pi_array=($(printf '%s\n' "${Pi_array[@]}" | sort))
+Pi_array=($(printf '%s\n' "${Pi_array[@]}" | sort -n))
 
 min_diff=9999999
 for (( i=1; i < $N; i++)); do
