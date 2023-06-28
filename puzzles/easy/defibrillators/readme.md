@@ -1,4 +1,6 @@
 # Defibrillators
+
+## ⚽The Goal
 The city of Montpellier has equipped its streets with defibrillators to help save victims of cardiac arrests. The data corresponding to the position of all defibrillators is available online.
 
 Based on the data we provide in the tests, write a program that will allow users to find the defibrillator nearest to their location using their mobile phone.

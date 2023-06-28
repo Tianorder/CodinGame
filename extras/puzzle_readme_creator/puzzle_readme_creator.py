@@ -16,7 +16,6 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
     readfile.readline()
     readfile.readline()
     readfile.readline()
-    readfile.readline()
     line = ' '
     listMode = False
     while line:
