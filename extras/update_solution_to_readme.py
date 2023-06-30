@@ -52,8 +52,9 @@ for difficultyDir in os.listdir(puzzlePath):
                 # 替换README文件数据
                 if haveNewFile:
                     loc = data.find("|",data.find("/" + puzzleName + ")")) + 15
-                    replaceStr = replaceStr[2:].ljust(400)
-                    data = data[:loc] + replaceStr + "|" + data[loc + 401:]
+                    if loc != -1:
+                        replaceStr = replaceStr[2:].ljust(400)
+                        data = data[:loc] + replaceStr + "|" + data[loc + 401:]
 
 with open("../README.md", 'w', encoding = 'utf-8') as writefile:
     writefile.write(data)
