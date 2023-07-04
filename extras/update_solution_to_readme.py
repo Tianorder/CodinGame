@@ -19,23 +19,21 @@ for difficultyDir in os.listdir(puzzlePath):
             filePath = os.path.join(puzzleNamePath, puzzleName)
             if os.path.isdir(filePath):
                 haveNewFile = False
-                replaceStr = ""
                 fileList = os.listdir(filePath)
-                # 用sorted排序比for循环更快。但如果在这里直接判断创建日期，没有最近的文件则直接不进行后面的循环会不会更快？
-                fileList = sorted(fileList, key=lambda x: os.path.getctime(os.path.join(filePath, x)))
-
+                # 固定排序
+                replaceList = [""] * 4
                 for filename in fileList:
                     if filename.endswith('py'):
-                        replaceStr += (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
-                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
-                    elif filename.endswith('java'):
-                        replaceStr += (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                        replaceList[0] = (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
                     elif filename.endswith('js'):
-                        replaceStr += (", [JavaScript](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                        replaceList[1] = (", [JavaScript](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+                    elif filename.endswith('java'):
+                        replaceList[2] = (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
                     elif filename.endswith('bat'):
-                        replaceStr += (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                        replaceList[3] = (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
 
                     # 检查文件的创建日期是否在七天内
@@ -48,12 +46,12 @@ for difficultyDir in os.listdir(puzzlePath):
                     # 判断是否在最近七天内
                     if time_diff.days <= 7:
                         haveNewFile = True
-
+                        
                 # 替换README文件数据
                 if haveNewFile:
                     loc = data.find("|",data.find("/" + puzzleName + ")")) + 15
                     if loc != -1:
-                        replaceStr = replaceStr[2:].ljust(400)
+                        replaceStr = "".join(replaceList)[2:].ljust(400)
                         data = data[:loc] + replaceStr + "|" + data[loc + 401:]
 
 with open("../README.md", 'w', encoding = 'utf-8') as writefile:
