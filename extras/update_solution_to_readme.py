@@ -32,7 +32,7 @@ for difficultyDir in os.listdir(puzzlePath):
                         replaceStr += (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
                     elif filename.endswith('js'):
-                        replaceStr += (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                        replaceStr += (", [JavaScript](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
                     elif filename.endswith('bat'):
                         replaceStr += (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
