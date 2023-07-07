@@ -1,5 +1,5 @@
 # Scrabble
-[![scrabble](/scrabble.jpg)](scrabble)
+[![scrabble](./scrabble.jpg)](scrabble)
 
  The Goal
 When playing Scrabble©, each player draws 7 letters and must find a word that scores the most points using these letters.
