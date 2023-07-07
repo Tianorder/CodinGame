@@ -8,7 +8,8 @@ For the implementation of the works, the operator has technical constraints wher
 A main cable will cross through the park from the West to the East (from the position x of the most westerly building to the position x of the most easterly building).
 
 For each building, a dedicated cable will connect from the building to the main cable by a minimal path (North or South), as shown in the following example:
- [![network-cabling1](/network-cabling1.png)](network-cabling1.png)
+
+ ![network-cabling1](/network-cabling1.png)
 
 	In this example, the green lines represent the cables. 
 The minimum length will therefore depend on the position of the main cable.
@@ -29,7 +30,7 @@ The minimum length L of cable required to connect all of the buildings. In other
 -230 ≤ x ≤ 230
 -230 ≤ y ≤ 230
 Example 1
- [![network-cabling2](/network-cabling2.png)](network-cabling2.png)
+ ![network-cabling2](/network-cabling2.png)
 
 ### Input
 3
@@ -40,7 +41,7 @@ Example 1
 ### Output
 4
 Example 2
- [![network-cabling3](/network-cabling3.png)](network-cabling3.png)
+ ![network-cabling3](/network-cabling3.png)
 
 ### Input
 3
