@@ -10,13 +10,13 @@ Thus, in order to computerize the mayan scientific calculations, you're asked to
 ## ✔Rules
 The mayan numerical system contains 20 numerals going from 0 to 19. Here's an ASCII example of their representation:
 
- [![mayan-calculation1](/mayan-calculation1.jpg)](mayan-calculation1.jpg)
+ [![mayan-calculation1](./mayan-calculation1.jpg)](mayan-calculation1.jpg)
 
 A mayan number is divided into vertical sections. Each section contains a numeral (from 0 to 19) representing a power of 20. The lowest section corresponds to 200, the one above to 201 and so on.
 
 * **Thereby, the example below is **: (12 x 20 x 20) + (0 x 20) + 5 = 4805
 
- [![mayan-calculation2](/mayan-calculation2.png)](mayan-calculation2.png)
+ [![mayan-calculation2](./mayan-calculation2.png)](mayan-calculation2.png)
 
 To spice the problem up, the mayans used several dialects, and the graphical representation of the numerals could vary from one dialect to another.
  

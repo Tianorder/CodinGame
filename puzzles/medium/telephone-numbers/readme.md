@@ -7,7 +7,7 @@ In the specifications, there are two points in particular that catch your attent
 1. Intelligent Assistance for entering numbers
 The numbers corresponding to the first digits entered will be displayed to the user almost instantly.
  
-[![telephone-numbers1](/telephone-numbers1.jpg)](telephone-numbers1.jpg)
+[![telephone-numbers1](./telephone-numbers1.jpg)](telephone-numbers1.jpg)
 
 
 2. Number storage optimization
@@ -15,7 +15,7 @@ First digits which are common to the numbers should not be duplicated in the mem
 
 Fortunately, the specifications also have this little chart to guide you in the implementation:
  
-[![telephone-numbers2](/telephone-numbers2.png)](telephone-numbers2.png)
+[![telephone-numbers2](./telephone-numbers2.png)](telephone-numbers2.png)
 
 Fig 1. Structure of data to stock phone numbers on iDroid
 

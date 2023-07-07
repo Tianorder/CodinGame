@@ -1,6 +1,6 @@
 # War
  
-[![Cards_Winamax_LD ](/Cards_Winamax_LD .jpg)](Cards_Winamax_LD )
+[![Cards_Winamax_LD](./Cards_Winamax_LD.jpg)](Cards_Winamax_LD)
 
 ## ⚽The Goal
 * **Let's go back to basics with this simple card game**: war!
