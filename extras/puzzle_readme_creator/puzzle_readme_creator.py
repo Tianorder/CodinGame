@@ -12,7 +12,7 @@ writeList = []
 with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
     line = readfile.readline()
     writeList.append("# " + line)
-    puzzleName = line.lower().replace(" ", "-")
+    puzzleName = line.lower().replace(" ", "-").rstrip()
     readfile.readline()
     readfile.readline()
     readfile.readline()
@@ -68,7 +68,8 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
             writeList.append(line)
 
 # 后面会考虑直接在目标处创建文件，而不是手动移动
-with open("readme.md", 'w', encoding = 'utf-8') as writefile:
+# puzzleName = "winamax-battle"
+with open("../../puzzles/medium/" + puzzleName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
     for line in writeList:
         writefile.write(line)
 
