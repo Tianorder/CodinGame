@@ -72,4 +72,3 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
 with open("../../puzzles/medium/" + puzzleName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
     for line in writeList:
         writefile.write(line)
-
