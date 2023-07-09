@@ -68,7 +68,13 @@ with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
             writeList.append(line)
 
 # 后面会考虑直接在目标处创建文件，而不是手动移动
-# puzzleName = "winamax-battle"
-with open("../../puzzles/medium/" + puzzleName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
-    for line in writeList:
-        writefile.write(line)
+if "Clash of Code" in puzzleName:
+    modeName = puzzleName[16:].lower().replace("-", "_")
+    with open("../../clash_of_code/" + modeName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
+        for line in writeList:
+            writefile.write(line)
+else:
+    # puzzleName = "winamax-battle"
+    with open("../../puzzles/medium/" + puzzleName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
+        for line in writeList:
+            writefile.write(line)

@@ -1,23 +1,22 @@
-Clash of Code - Reverse mode
- 14MN 52SC
-
-A contribution by SahilK
+# Clash of Code - Reverse mode
  Approved by ash2620,Unnamed CodinGamerandnicola
-The game mode is REVERSE: You do not have access to the statement. You have to guess what to do by observing the following set of tests:
-01 Test 1
-Input
+* **The game mode is REVERSE**: You do not have access to the statement. You have to guess what to do by observing the following set of tests:
+
+### Input
 Expected output
 3
 +++
 +++
 +++
 02 Test 2
-Input
+
+### Input
 Expected output
 1
 +
 03 Test 3
-Input
+
+### Input
 Expected output
 18
 ++++++++++++++++++
@@ -39,7 +38,8 @@ Expected output
 ++++++++++++++++++
 ++++++++++++++++++
 04 Test 4
-Input
+
+### Input
 Expected output
 8
 ++++++++
