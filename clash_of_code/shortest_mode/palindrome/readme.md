@@ -1,18 +1,24 @@
-Clash of Code - Shortest mode
- 14MN 41SC
-
-A contribution by ExoSpexos
+# Clash of Code - Shortest mode
  Approved by yveslacroix83400,Blodisandonkery
- 	Goal
+
+## Goal
 For almost every integer resides a hidden palindrome. To arrive at the palindrome, you must take an integer x and add its reverse value. Repeat the process and you'll find the hidden palindrome!
-Input
+
+### Input
 An integer x as a starting value.
-Output
+
+### Output
 The palindrome calculated from the starting value x
-Constraints
-0 < x < 10000
-Example
-Input
-1
-Output
-1
+
+### Constraints
+* 0 < x < 10000
+
+### Example
+
+    Input
+
+        1
+
+    Output
+
+        1        
