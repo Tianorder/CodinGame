@@ -75,6 +75,12 @@ if "clash-of-code" in puzzleName:
             writefile.write(line)
 else:
     # puzzleName = "winamax-battle"
-    with open("../../puzzles/medium/" + puzzleName + "/readme.md", 'w', encoding = 'utf-8') as writefile:
-        for line in writeList:
-            writefile.write(line)
+    puzzlePath = "../../puzzles"
+    for difficultyDir in os.listdir(puzzlePath):
+        puzzleNamePath = os.path.join(puzzlePath, difficultyDir, puzzleName)
+        if os.path.exists(puzzleNamePath):
+            with open(puzzleNamePath + "/readme.md", 'w', encoding = 'utf-8') as writefile:
+                for line in writeList:
+                    writefile.write(line)
+                print("已生成文件" + puzzleNamePath)
+            break
