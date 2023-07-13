@@ -22,8 +22,13 @@ for difficultyDir in os.listdir(puzzlePath):
                 fileList = os.listdir(filePath)
                 # 固定排序
                 replaceList = [""] * 4
+                codegolfReplaceStr = ""
                 for filename in fileList:
                     if "codesize" in filename:
+                        if filename.endswith('py'):
+                            codegolfReplaceStr = ("[Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                           + difficultyDir + "/" + puzzleName + "/" + filename + ")").ljust(400)
+                            codegolfFilename = filename.split(".")[0]
                         continue
                     if filename.endswith('py'):
                         replaceList[0] = (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
@@ -55,6 +60,11 @@ for difficultyDir in os.listdir(puzzlePath):
                     if loc != -1:
                         replaceStr = "".join(replaceList)[2:].ljust(400)
                         data = data[:loc] + replaceStr + "|" + data[loc + 401:]
+                if codegolfReplaceStr:
+                    loc = data.find("|",data.find("/" + codegolfFilename + ")")) + 15
+                    if loc != -1:
+                        data = data[:loc] + codegolfReplaceStr + "|" + data[loc + 401:]
+
 
 with open("../README.md", 'w', encoding = 'utf-8') as writefile:
     writefile.write(data)
