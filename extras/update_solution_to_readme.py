@@ -30,18 +30,19 @@ for difficultyDir in os.listdir(puzzlePath):
                                            + difficultyDir + "/" + puzzleName + "/" + filename + ")").ljust(400)
                             codegolfFilename = filename.split(".")[0]
                         continue
-                    if filename.endswith('py'):
-                        replaceList[0] = (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
-                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
-                    elif filename.endswith('js'):
-                        replaceList[1] = (", [JavaScript](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
-                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
-                    elif filename.endswith('java'):
-                        replaceList[2] = (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
-                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
-                    elif filename.endswith('bat'):
-                        replaceList[3] = (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
-                                       + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+                    if filename.split(".")[0] == puzzleName:
+                        if filename.endswith('py'):
+                            replaceList[0] = (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                           + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+                        elif filename.endswith('js'):
+                            replaceList[1] = (", [JavaScript](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                           + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+                        elif filename.endswith('java'):
+                            replaceList[2] = (", [Java](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                           + difficultyDir + "/" + puzzleName + "/" + filename + ")")
+                        elif filename.endswith('bat'):
+                            replaceList[3] = (", [Bash](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
+                                           + difficultyDir + "/" + puzzleName + "/" + filename + ")")
 
                     # 检查文件的创建日期是否在七天内
                     file_path = os.path.join(filePath, filename)
