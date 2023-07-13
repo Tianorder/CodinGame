@@ -23,6 +23,8 @@ for difficultyDir in os.listdir(puzzlePath):
                 # 固定排序
                 replaceList = [""] * 4
                 for filename in fileList:
+                    if "codesize" in filename:
+                        continue
                     if filename.endswith('py'):
                         replaceList[0] = (", [Python](https://github.com/Tianorder/CodinGame/tree/main/puzzles/"
                                        + difficultyDir + "/" + puzzleName + "/" + filename + ")")
