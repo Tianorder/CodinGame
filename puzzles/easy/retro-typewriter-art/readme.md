@@ -1,10 +1,8 @@
-Retro Typewriter Art
-Best score
-100
-
+# Retro Typewriter Art
 A contribution by Lisa-Has-Ideas
  Approved by Westicles,FredericLocquetandPewPewBewm
- 	Goal
+
+## Goal
 Back in the day, people had fun turning "recipes" into surprise images using typewriters.
 
 Use the provided recipe to create a recognizable image.
@@ -45,19 +43,27 @@ Sources/references:
 https://asciiart.cc
 https://loriemerson.net/2013/01/18/d-i-y-typewriter-art/
 https://www.youtube.com/watch?v=kyK5WvpFxqo
-Input
+
+### Input
 string recipe
-Output
+
+### Output
 string (multiple lines) to show the image the recipe creates
-Constraints
-5 ≤ Length of recipe ≤ 1000
-There won't be any double quotes (") in the recipe
-recipe will contain at least 1 nl
-Example
-Input
-1sp 1/ 1bS 1_ 1/ 1bS nl 1( 1sp 1o 1. 1o 1sp 1) nl 1sp 1> 1sp 1^ 1sp 1< nl 2sp 3|
-Output
- /\_/\
-( o.o )
- > ^ <
-  |||
+
+### Constraints
+* 5 ≤ Length of recipe ≤ 1000
+* There won't be any double quotes (") in the recipe
+* recipe will contain at least 1 nl
+
+### Example
+
+    Input
+
+        1sp 1/ 1bS 1_ 1/ 1bS nl 1( 1sp 1o 1. 1o 1sp 1) nl 1sp 1> 1sp 1^ 1sp 1< nl 2sp 3|
+
+    Output
+
+         /\_/\
+        ( o.o )
+         > ^ <
+          |||        
