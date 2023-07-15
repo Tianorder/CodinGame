@@ -12,7 +12,7 @@ writeList = []
 with open("paste_here.txt", 'r', encoding = 'utf-8') as readfile:
     line = readfile.readline()
     writeList.append("# " + line)
-    puzzleName = line.lower().replace(" ", "-").rstrip()
+    puzzleName = line.lower().replace(" ", "-").replace(".", "-").rstrip()
     readfile.readline()
     readfile.readline()
     readfile.readline()
