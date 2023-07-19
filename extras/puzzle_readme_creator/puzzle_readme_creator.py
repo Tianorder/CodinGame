@@ -78,9 +78,10 @@ else:
     puzzlePath = "../../puzzles"
     for difficultyDir in os.listdir(puzzlePath):
         puzzleNamePath = os.path.join(puzzlePath, difficultyDir, puzzleName)
-        if os.path.exists(puzzleNamePath):
-            with open(puzzleNamePath + "/readme.md", 'w', encoding = 'utf-8') as writefile:
-                for line in writeList:
-                    writefile.write(line)
-                print("已生成文件" + puzzleNamePath)
-            break
+        if not os.path.exists(puzzleNamePath):
+            puzzleNamePath = '.'
+        with open(puzzleNamePath + "/readme.md", 'w', encoding = 'utf-8') as writefile:
+            for line in writeList:
+                writefile.write(line)
+            print("已生成文件" + puzzleNamePath)
+        break
