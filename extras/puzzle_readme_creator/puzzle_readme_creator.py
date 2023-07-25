@@ -74,7 +74,7 @@ if "clash-of-code" in puzzleName:
     with open(modeNamePath + "/readme.md", 'w', encoding = 'utf-8') as writefile:
         for line in writeList:
             writefile.write(line)
-    print("已生成文件" + puzzleNamePath)
+    print("已生成文件" + modeNamePath)
 else:
     # puzzleName = "winamax-battle"
     puzzlePath = "../../puzzles"
