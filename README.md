@@ -1,4 +1,4 @@
-[![CodinGame](/CodinGame.png)]([https://www.codingame.com/](https://www.codingame.com/profile/0e75a8749102ddcfc5f63dbe3b2a522c2237641) "CodinGame")
+[![CodinGame](/CodinGame.png)](https://www.codingame.com/profile/0e75a8749102ddcfc5f63dbe3b2a522c2237641 "CodinGame")
 
 <br>
 
