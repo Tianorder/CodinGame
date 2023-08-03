@@ -1,7 +1,4 @@
 import sys
-import math
-
-# Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 w, h = [int(i) for i in input().split()]
@@ -31,80 +28,60 @@ for i in range(0, len(codes), 2):
     else:
         matrix[y] = matrix[y][:x] + [fill] * (next_x - x) + matrix[y][next_x:]
     x = next_x
-
-note_dict = {}
-staff_y_list = [34, 35, 36, 37, 58, 59, 60, 61, 82, 83, 84, 85, 106, 107, 108, 109, 130, 131, 132, 133, 154, 155, 156, 157]
+zip_matrix = list(zip(*matrix))
 
 
+note_string = "GFEDCBAGFEDC"
 def get_note_by_y(y):
-    if 9 < y < 21: # 15
-        return "G"
-    elif 21 < y < 33: # 27
-        return "F"
-    elif 33 < y < 45: # 39
-        return "E"
-    elif 45 < y < 57: # 51
-        return "D"
-    elif 57 < y < 69:
-        return "C"
-    elif 69 < y < 81:
-        return "B"
-    elif 81 < y < 93:
-        return "A"
-    elif 93 < y < 105:
-        return "G"
-    elif 105 < y < 117:
-        return "F"
-    elif 117 < y < 129:
-        return "E"
-    elif 129 < y < 141:
-        return "D"
-    elif 141 < y < 153:
-        return "C"
-    else:
-        return " "
+    print(y, file=sys.stderr, flush=True)
+    half_length = note_length / 2
+    pure_y = y - (first_one_index - note_length)
+    print(pure_y, pure_y / half_length, file=sys.stderr, flush=True)
+    return note_string[int(pure_y // half_length)]
 
 
-def find_note(x, y, matrix):
-    # print(x, y, matrix[y][x + 2], file=sys.stderr, flush=True)
-    if matrix[y][x + 2] == 1:
-        if matrix[y + 2][x + 2] == 0:
-            typ = "H"
-        else:
-            typ = "Q"
-        note_dict[x] = get_note_by_y(y) + typ
-        for i in range(x - 8, x + 17):
-            for j in range(y, h):
-                matrix[j][i] = 0
-    else:
-        for i in range(y, h):
-            if matrix[i][x - 2] == 1 and i not in staff_y_list:
-                if matrix[i + 4][x - 4] == 0:
-                    typ = "H"
-                else:
-                    typ = "Q"
-                note_dict[x] = get_note_by_y(i) + typ
-                for i in range(x - 21, x + 2):
-                    for j in range(y, h):
-                        matrix[j][i] = 0
-                break
-
-
-
-
-# 找最上方的点，通过点找音符，在二维数组里删除音符
-for i in range(h):
-    if i in staff_y_list:
+# 找五线谱
+sum_staff = 0
+staff = []
+staff_y = []
+while zip_matrix:
+    row = zip_matrix.pop(0)
+    sum_staff = sum(row)
+    if sum_staff == 0:
         continue
-    while sum(matrix[i]) != 0:
-        x = matrix[i].index(1)
-        # 找到音符，删除音符
-        find_note(x, i, matrix)
+    else:
+        staff = row
+        first_one_index = row.index(1)
+        first_zero_index = row.index(0, first_one_index)
+        next_one_index = row.index(1, first_zero_index)
+        note_length = next_one_index - first_one_index
+        staff_y = []
+        for i in range(6):
+            staff_y.extend(list(range(first_one_index + note_length * i, first_zero_index + note_length * i)))
+        print(staff_y, file=sys.stderr, flush=True)
+        break
 
-
-# Write an answer using print
-# To debug: print("Debug messages...", file=sys.stderr, flush=True)
-
-sorted_keys = sorted(note_dict.keys())
-out = " ".join(note_dict[key] for key in sorted_keys)
-print(out)
+sixline_staff = [0] * h
+for i in staff_y:
+    sixline_staff[i] = 1
+previous_row = staff
+note_list = []
+while zip_matrix:
+    row = zip_matrix.pop(0)
+    if row != staff and list(row) != sixline_staff:
+        if previous_row != staff and list(previous_row) != sixline_staff:
+            continue
+        else:
+            for index, num in enumerate(row):
+                if num == 1 and index not in staff_y:
+                    y = index
+                    break
+            else:
+                continue
+            if zip_matrix[5][y] == 0:
+                typ = "H"
+            else:
+                typ = "Q"
+            note_list += [get_note_by_y(y) + typ]
+    previous_row = row
+print(" ".join(note_list))
