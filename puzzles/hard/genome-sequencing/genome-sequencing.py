@@ -8,7 +8,6 @@ print(word_list, file=sys.stderr, flush=True)
 
 # 输入原始序列和子序列，返回原始序列
 def get_next_sequence(sequence, wordB):
-    char = wordB[0]
     length_list = []
     if wordB in sequence:
         sequence.remove(wordB)
@@ -23,6 +22,7 @@ def get_next_sequence(sequence, wordB):
             continue
         loc = 0
         start_length = 9999
+        char = wordB[0]
         if char in wordA:
             for _ in range(wordA.count(char)):
                 loc = wordA.find(char, loc + 1)
@@ -33,7 +33,8 @@ def get_next_sequence(sequence, wordB):
                     break
         loc = 9999
         end_length = 9999
-        if wordB[-1] in wordA:
+        char = wordB[-1]
+        if char in wordA:
             for _ in range(wordA.count(char)):
                 loc = wordA.rfind(char, 0, loc - 1)
                 if wordB.endswith(wordA[:loc + 1]):
