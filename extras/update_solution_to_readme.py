@@ -54,6 +54,7 @@ for difficultyDir in os.listdir(puzzlePath):
                     # 判断是否在最近七天内
                     if time_diff.days <= 7:
                         haveNewFile = True
+                        print(filePath, filename)
                         
                 # 替换README文件数据
                 if haveNewFile:
